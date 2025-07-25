@@ -25,7 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans bg-blue-50 min-h-screen">
-        {children}
+        {children},
+        [geistMono],
+        [geistSans]
       </body>
     </html>
   );
