@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
   const pdfDoc = await PDFDocument.load(arrayBuffer);
   const pages = pdfDoc.getPages();
   const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
-  pages.forEach((page: any) => {
+  pages.forEach((page: typeof pages[number]) => {
     page.drawText('Enhanced by Manan', {
       x: 50,
       y: 30,
