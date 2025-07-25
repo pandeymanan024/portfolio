@@ -31,4 +31,4 @@ export async function POST(req: NextRequest) {
       'Content-Disposition': 'attachment; filename="enhanced_resume.pdf"',
     },
   });
-} 
+}
