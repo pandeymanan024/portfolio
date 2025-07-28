@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Education Information</h2>
+        <form id="educationForm">
+            <div class="form-group">
+                <label for="education">Select your education level:</label>
+                <select id="education" name="education" required>
+                    <option value="">Choose an option...</option>
+                    <option value="bachelors">Bachelors</option>
+                    <option value="masters">Masters</option>
+                    <option value="doctors">Doctors</option>
+                    <option value="phd">PhD</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result" class="result">
+            <strong>Selected Education:</strong> <span id="selectedEducation"></span>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('educationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const selectedEducation = document.getElementById('education').value;
+            const resultDiv = document.getElementById('result');
+            const selectedSpan = document.getElementById('selectedEducation');
+            
+            if (selectedEducation) {
+                selectedSpan.textContent = selectedEducation;
+                resultDiv.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html> 
